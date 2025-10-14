@@ -37,7 +37,7 @@ It allows users to:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/ai-hub-app.git
+git clone https://github.com/GaurangGupta02/ChatGPT-Clone-AI-Chatbot.git
 cd ai-hub-app
 ```
 
