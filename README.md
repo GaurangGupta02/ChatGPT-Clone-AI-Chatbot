@@ -99,7 +99,7 @@ Then open the link shown in the terminal (usually `http://localhost:8501`).
 ## 🧑‍💻 Author
 
 **Gaurang Gupta**  
-💼 GitHub:https://gith📧 Email: *(optional)*  
+💼 GitHub:https://gith📧   
 
 ---
 
