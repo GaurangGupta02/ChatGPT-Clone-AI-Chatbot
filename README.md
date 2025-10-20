@@ -1,112 +1,137 @@
-# ChatGPT-Clone-AI-Chatbot
-# 🤖 AI Hub App — Chat + Vision (LLaVA)
+Here’s the **updated README** file for your current project version (`ai_hub_app.py`), which now supports **multi-file uploads (PDF, DOCX, TXT, Images)** and **document-aware chat** alongside AI chat and OCR:
 
-This project is a **Streamlit-based AI assistant** that combines **text-based chat** and **image understanding (OCR)** using the **LLaVA (Large Language and Vision Assistant)** model through **Ollama**.
+---
+
+# 🤖 ChatGPT-Clone-AI-Chatbot
+
+## **AI Hub App — Chat + Vision + Docs (LLaVA + Ollama + Streamlit)**
+
+This project is an advanced **Streamlit-based AI assistant** that unifies **text chat**, **document understanding**, and **image OCR** in a single interface using **LLaVA** through **Ollama**.
 
 It allows users to:
-- Chat with an AI model locally via Ollama.
-- Upload an image to extract text using the model’s vision capabilities.
-- Maintain chat history with session management.
-- Interact via a modern, responsive chat interface.
+
+* Chat with a local AI model (via Ollama).
+* Upload multiple files (PDF, DOCX, TXT, or Images).
+* Extract and use file content as chat context.
+* Stream live responses with the ability to stop generation.
+* Keep and revisit chat history — all inside the browser.
 
 ---
 
 ## 🌟 Features
 
-- 🧠 **AI Chat Interface** — Interact with the LLaVA model directly from the browser.
-- 🖼️ **Image Text Extraction (OCR)** — Upload images and automatically extract visible text.
-- 💬 **Chat History** — View and manage previous conversations.
-- 🛑 **Stop Generation** — Interrupt model responses in real time.
-- ⚙️ **Custom UI Design** — Enhanced with CSS for a clean, modern look.
-- 🚀 **Streamed Responses** — See answers generated in real-time.
+* 💬 **AI Chat Interface** — Interact with LLaVA directly in Streamlit.
+* 📁 **Multi-File Upload Support** — Upload PDFs, DOCX, TXT, and image files.
+* 🧠 **Document-Aware Responses** — The model uses uploaded document text as context to answer user queries.
+* 🖼️ **Image OCR Integration** — Reads visible text from uploaded images using vision capabilities.
+* 🔁 **Chat History & Session Management** — View, save, and clear past conversations.
+* 🛑 **Stop Generation Button** — Halt model output in real-time.
+* 🧰 **Automatic DOCX Fix** — Self-corrects missing `python-docx` dependency if needed.
+* ⚙️ **Polished UI** — Modern, responsive design with styled upload buttons and layout.
+* ⚡ **Streamed Responses** — Watch AI output generate live as it’s produced.
 
 ---
 
 ## 🧩 Tech Stack
 
-| Component | Description |
-|------------|-------------|
-| **Frontend/UI** | [Streamlit](https://streamlit.io) |
-| **Backend Model** | [Ollama](https://ollama.ai) running **LLaVA** |
-| **Language** | Python 3.9+ |
-| **Libraries Used** | `streamlit`, `requests`, `json`, `base64`, `re`, `datetime`, `time` |
+| Component          | Description                                                                                  |
+| ------------------ | -------------------------------------------------------------------------------------------- |
+| **Frontend/UI**    | [Streamlit](https://streamlit.io)                                                            |
+| **Backend Model**  | [Ollama](https://ollama.ai) running **LLaVA**                                                |
+| **Language**       | Python 3.9+                                                                                  |
+| **Libraries Used** | `streamlit`, `requests`, `json`, `base64`, `re`, `time`, `datetime`, `PyPDF2`, `python-docx` |
 
 ---
 
 ## ⚙️ Installation & Setup
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/GaurangGupta02/ChatGPT-Clone-AI-Chatbot.git
-cd ai-hub-app
+cd ChatGPT-Clone-AI-Chatbot
 ```
 
 ### 2. Install Dependencies
+
 Make sure you have **Python 3.9+** installed.
 
 ```bash
-pip install streamlit requests
+pip install streamlit requests PyPDF2 python-docx
 ```
 
 ### 3. Install and Run Ollama
-You need to have **Ollama** installed and the **LLaVA model** available locally.
 
-#### Install Ollama
-Visit [Ollama’s official website](https://ollama.ai) to install.
+Install Ollama from its official website:
+👉 [https://ollama.ai](https://ollama.ai)
 
-#### Pull the LLaVA Model
+Pull the **LLaVA** model:
+
 ```bash
 ollama pull llava
 ```
 
-#### Run Ollama Server
+Then run Ollama’s local server:
+
 ```bash
 ollama serve
 ```
 
-This starts Ollama’s local API at `http://localhost:11434`.
+This launches a local API at:
+`http://localhost:11434`
 
 ---
 
 ## ▶️ Run the App
 
-Once Ollama is running, start the Streamlit app:
+With Ollama running, start the Streamlit app:
 
 ```bash
 streamlit run ai_hub_app.py
 ```
 
-Then open the link shown in the terminal (usually `http://localhost:8501`).
+You’ll see the app running at:
+`http://localhost:8501`
 
 ---
 
 ## 🧠 How It Works
 
-1. **Chat Interface**  
-   - Enter text in the chat input box.  
-   - The app sends your prompt to Ollama’s LLaVA model using its API.  
-   - Responses are streamed and displayed live.
+1. **Chat Interface**
 
-2. **Image Upload (OCR)**  
-   - Upload a `.jpg` or `.png` image.  
-   - The app sends the base64-encoded image to LLaVA with an OCR prompt.  
-   - Extracted text appears as a chat message, ready for further conversation.
+   * Type a message in the chat input.
+   * The message is sent to the LLaVA model via Ollama’s API.
+   * Responses are streamed back in real-time.
 
-3. **Chat History**  
-   - Conversations are stored using Streamlit’s session state.  
-   - You can start new chats or clear all history from the sidebar.
+2. **File Upload (Docs + Images)**
+
+   * Upload any combination of `.pdf`, `.docx`, `.txt`, `.jpg`, `.jpeg`, or `.png` files.
+   * The app extracts text automatically using PDF/DOCX readers or OCR for images.
+   * Extracted content becomes **context** for subsequent chat queries.
+
+3. **Chat History**
+
+   * Session state saves recent conversations.
+   * Start a new chat or revisit old ones from the sidebar.
+   * Clear all history when needed.
+
+4. **Stop Generation**
+
+   * Instantly stop AI response generation mid-stream via the 🛑 button.
+
+---
 
 ## 🧑‍💻 Author
 
-**Gaurang Gupta**  
-💼 GitHub:https://gith📧   
+**Gaurang Gupta**
+📦 GitHub: [GaurangGupta02](https://github.com/GaurangGupta02)
 
 ---
 
 ## 📜 License
 
-This project is licensed under the **MIT License** — feel free to use and modify it.
+This project is licensed under the **MIT License** — feel free to use, modify, and distribute.
 
 ---
 
-> ⚡ *“Chat with your AI and let it see the world — powered by LLaVA and Streamlit.”*
+> ⚡ *“Chat with your AI, read your files, and see your world — powered by LLaVA and Streamlit.”*
