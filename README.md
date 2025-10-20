@@ -1,10 +1,4 @@
-Here’s the **updated README** file for your current project version (`ai_hub_app.py`), which now supports **multi-file uploads (PDF, DOCX, TXT, Images)** and **document-aware chat** alongside AI chat and OCR:
-
----
-
 # 🤖 ChatGPT-Clone-AI-Chatbot
-
-## **AI Hub App — Chat + Vision + Docs (LLaVA + Ollama + Streamlit)**
 
 This project is an advanced **Streamlit-based AI assistant** that unifies **text chat**, **document understanding**, and **image OCR** in a single interface using **LLaVA** through **Ollama**.
 
